@@ -44,7 +44,8 @@
     "typescript": "^2.1.0-dev.20160902",
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.21",
-    "webpack-dev-server": "^2.1.0-beta.2"
+    "webpack-dev-server": "^2.1.0-beta.2",
+    "webpack-merge": "^0.14.1"
   },
   "repository": {
     "type": "git",
