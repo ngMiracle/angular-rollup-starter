@@ -9,7 +9,7 @@
     "test": "webpack --config webpack.spec.ts --progress --color && karma start",
     "start": "webpack-dev-server --hot --inline --compress --progress --port 3000  --content-base src",
     "start-debug": "webpack-dev-server --config config/webpack.debug.js --hot --inline --compress --progress --port 3000  --content-base src",
-    "start-deploy": "webpack-dev-server --config config/webpack.deploy.js --hot --inline --compress --progress --port 3000  --content-base src"
+    "start-deploy": "npm run ngc && webpack-dev-server --config config/webpack.deploy.js --hot --inline --compress --progress --port 3000  --content-base src"
   },
   "author": "",
   "license": "ISC",
