@@ -16,4 +16,8 @@ export class Notes {
       value: 'v1'
     }
   ]
+
+  checkCard(note, i) {
+    this.notes.splice(i, 1)
+  }
 }
