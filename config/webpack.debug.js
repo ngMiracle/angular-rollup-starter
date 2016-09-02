@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     cache: true,
@@ -19,9 +20,32 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.ts$/, loader: 'awesome-typescript!angular2-template'},
-            {test: /\.html/, loader: 'raw'},
-            {test: /\.css$/, loader: 'to-string!css'},
+            {
+                test: /\.component\.ts$/, 
+                loader: 'awesome-typescript!angular2-template'
+            },
+            {
+                test: /\.ts$/, 
+                exclude: [/\.component\.ts/], 
+                loader: 'awesome-typescript'
+            },
+            {
+                test: /\.component\.html$/, 
+                loader: 'raw'
+            },
+            {
+                test: /\.component\.css$/, 
+                loader: 'to-string!css'
+            },
+            {
+                test: /\.css$/, 
+                exclude: [/\.component\.css$/], 
+                loader: ExtractTextPlugin.extract({fallbackLoader: 'style', loader: 'css'})
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+                loader: 'url?limit=10000'
+            }
         ]
     },
 
@@ -33,10 +57,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
+        new ExtractTextPlugin('styles.css'),
     ],
 
     resolve: {
-        extensions: ['', '.js', '.ts', '.json']
+        extensions: ['', '.ts', '.js', '.json']
     },
 
     devServer: {

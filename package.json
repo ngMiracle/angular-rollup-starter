@@ -1,7 +1,7 @@
 {
-  "name": "retain",
-  "version": "1.0.0",
-  "description": "",
+  "name": "westeros",
+  "version": "0.0.1",
+  "description": "todo",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -11,15 +11,16 @@
     "start-debug": "webpack-dev-server --config config/webpack.debug.js --hot --inline --compress --progress --port 3000  --content-base src",
     "start-deploy": "npm run ngc && webpack-dev-server --config config/webpack.deploy.js --hot --inline --compress --progress --port 3000  --content-base src"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Trotyl Yu <trotyl@qq.com>",
+  "license": "MIT",
   "dependencies": {
     "@angular/common": "^2.0.0-rc.6",
     "@angular/core": "^2.0.0-rc.6",
+    "@angular/forms": "^2.0.0-rc.6",
     "@angular/http": "^2.0.0-rc.6",
     "@angular/platform-browser": "^2.0.0-rc.6",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.6",
-    "@angular2-material/core": "^2.0.0-alpha.7-4",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "rxjs": "^5.0.0-beta.11",
     "zone.js": "^0.6.12"
@@ -31,13 +32,26 @@
     "awesome-typescript-loader": "1.0",
     "codelyzer": "0.0.28",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.1",
     "to-string-loader": "^1.1.4",
     "ts-helpers": "^1.1.1",
     "tslint": "^3.15.1",
     "typescript": "^2.1.0-dev.20160902",
+    "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.21",
     "webpack-dev-server": "^2.1.0-beta.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trotyl/westeros.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trotyl/westeros/issues"
+  },
+  "homepage": "https://github.com/trotyl/westeros#readme"
 }
