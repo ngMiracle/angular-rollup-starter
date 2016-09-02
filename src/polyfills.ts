@@ -1,4 +1,9 @@
-import 'core-js/es6';
-import 'core-js/es7/reflect';
+import 'core-js/fn/reflect/define-metadata'
+import 'core-js/fn/reflect/get-metadata'
+import 'core-js/fn/reflect/get-own-metadata'
+import 'core-js/fn/reflect/metadata'
+
+import 'rxjs/Observable'
+
 import 'zone.js/dist/zone';
 import 'zone.js/dist/long-stack-trace-zone';

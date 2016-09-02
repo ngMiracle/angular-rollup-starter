@@ -15,5 +15,7 @@
   ],
   "compileOnSave": false,
   "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  "awesomeTypescriptLoaderOptions": {
+    "useWebpackText": true
+  }
 }

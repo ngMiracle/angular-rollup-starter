@@ -1,53 +1,58 @@
-var path = require('path')
-var webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-var config = {
-  cache: true,
-  devtool: 'source-map',
-  entry: {
-    polyfills: './src/polyfills',
-    vendor:    './src/vendor',
-    main:      './src/main'
-  },
+module.exports = {
+    cache: true,
+    devtool: 'module-source-map',
+    entry: {
+        polyfills: './src/polyfills',
+        vendors: './src/vendors',
+        main: './src/main',
+    },
 
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
-    chunkFilename: '[id].chunk.js'
-  },
-  module: {
-    loaders: [
-      { test: /\.ts$/,   loader: 'awesome-typescript-loader' },
-      { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.html/,  loader: 'raw-loader' },
-      { test: /\.css$/,  loader: 'to-string-loader!css-loader' },
-    ]
-  },
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        sourceMapFilename: '[name].map',
+        chunkFilename: '[id].chunk.js',
+    },
+    module: {
+        loaders: [
+            {test: /\.ts$/, loader: 'awesome-typescript!angular2-template'},
+            {test: /\.html/, loader: 'raw'},
+            {test: /\.css$/, loader: 'to-string!css'},
+        ]
+    },
 
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['polyfills', 'vendor', 'main'].reverse(), minChunks: Infinity }),
-  ],
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['polyfills', 'vendors', 'main'].reverse(),
+            minChunks: Infinity
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        }),
+    ],
 
-  resolve: {
-    extensions: ['', '.ts', '.js', '.json']
-  },
+    resolve: {
+        extensions: ['', '.js', '.ts', '.json']
+    },
 
-  devServer: {
-    historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
-  },
+    devServer: {
+        historyApiFallback: true,
+        watchOptions: {aggregateTimeout: 300, poll: 1000},
+    },
 
-  node: {
-    global: true,
-    process: true,
-    Buffer: false,
-    crypto: 'empty',
-    module: false,
-    clearImmediate: false,
-    setImmediate: false,
-    clearTimeout: true,
-    setTimeout: true
-  }
-};
-module.exports = config;
+    node: {
+        global: true,
+        process: true,
+        Buffer: false,
+        crypto: 'empty',
+        module: false,
+        clearImmediate: false,
+        setImmediate: false,
+        clearTimeout: true,
+        setTimeout: true,
+    }
+}
