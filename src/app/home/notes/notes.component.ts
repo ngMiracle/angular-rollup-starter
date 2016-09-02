@@ -1,12 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
+
+import { Note } from './note'
 
 @Component({
     selector: 'notes',
     templateUrl: './notes.component.html'
 })
-export class NotesComponent implements OnInit {
-    constructor() { }
+export class NotesComponent {
+    notes: Note[] = [
+        { title: 'n', value: 'v' },
+        { title: 'n1', value: 'v1' },
+    ]
 
-    ngOnInit() { }
-
+    checkCard(noteToRemove: Note): void {
+        this.notes = this.notes.filter(note => note !== noteToRemove)
+    }
 }
