@@ -17,5 +17,9 @@
   "buildOnSave": false,
   "awesomeTypescriptLoaderOptions": {
     "useWebpackText": true
+  },
+  "angularCompilerOptions": {
+    "genDir": ".",
+    "debug": true
   }
 }

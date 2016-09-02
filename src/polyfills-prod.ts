@@ -4,4 +4,4 @@ import 'core-js/fn/reflect/get-own-metadata'
 
 import 'rxjs/Observable'
 
-import 'zone.js';
+import 'zone.js'
