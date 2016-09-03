@@ -6,10 +6,6 @@ import { AppComponent } from './app.component'
 @NgModule({
     imports: [BrowserModule],
     declarations: [AppComponent],
-    entryComponents: [AppComponent],
+    bootstrap: [AppComponent],
 })
-export class AppModule {
-    ngDoBootstrap(appRef: ApplicationRef) {
-        appRef.bootstrap(AppComponent)
-    }
-}
+export class AppModule { }
