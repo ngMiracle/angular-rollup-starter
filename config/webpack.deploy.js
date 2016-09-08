@@ -51,14 +51,6 @@ module.exports = merge(common, {
             name: ['polyfills', 'vendors', 'main'].reverse(),
             minChunks: Infinity
         }),
-        new ClosureCompilerPlugin({
-            compiler: {
-                language_in: 'ECMASCRIPT6',
-                language_out: 'ECMASCRIPT5',
-                compilation_level: 'SIMPLE'
-            },
-            concurrency: 3,
-        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
