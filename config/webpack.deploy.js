@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 const common = require('./webpack.common')
 
@@ -52,7 +51,7 @@ module.exports = merge(common, {
             minChunks: Infinity
         }),
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: 'src/index.html',
         }),
     ],
 })
