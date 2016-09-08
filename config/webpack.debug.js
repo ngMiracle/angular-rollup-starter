@@ -42,6 +42,9 @@ module.exports = merge(common, {
             }
         ]
     },
+    resolve: {
+        extensions: ['', '.ts', '.js', '.json']
+    },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: ['polyfills', 'vendors', 'main'].reverse(),

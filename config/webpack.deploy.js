@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 const common = require('./webpack.common')
 
@@ -42,15 +43,21 @@ module.exports = merge(common, {
             }
         ]
     },
+    resolve: {
+        extensions: ['', '.ts', '.ts', '.js', '.json']
+    },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: ['polyfills', 'vendors', 'main'].reverse(),
             minChunks: Infinity
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
+        new ClosureCompilerPlugin({
+            compiler: {
+                language_in: 'ECMASCRIPT6',
+                language_out: 'ECMASCRIPT5',
+                compilation_level: 'SIMPLE'
+            },
+            concurrency: 3,
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'

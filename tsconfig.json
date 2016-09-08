@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2015",
     "target": "es5",
     "outDir": "dist",
+    "lib": ["es2015", "dom"],
     "rootDir": ".",
     "sourceMap": true,
     "emitDecoratorMetadata": true,

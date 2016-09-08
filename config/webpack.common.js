@@ -12,9 +12,6 @@ module.exports = {
         sourceMapFilename: '[name].map',
         chunkFilename: '[id].chunk.js',
     },
-    resolve: {
-        extensions: ['', '.ts', '.js', '.json']
-    },
     devServer: {
         historyApiFallback: true,
         watchOptions: {aggregateTimeout: 300, poll: 1000},
