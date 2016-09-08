@@ -1,5 +1,5 @@
-# Westeros
+# Angular 2 Webpack Starter
 
-```
-//TODO
-```
+AOT + Tree-shaking + Minify + Gzip => 70.8KB
+
+![Network Screenshot](./network.png)
