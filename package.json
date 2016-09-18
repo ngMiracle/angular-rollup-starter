@@ -4,8 +4,6 @@
   "description": "todo",
   "main": "index.js",
   "scripts": {
-    "bundle-debug": "webpack --config config/webpack.debug.js",
-    "bundle-deploy": "webpack --config config/webpack.deploy.js",
     "build": "npm run ngc && npm run tsc && npm run rollup && gzip -kf dist/bundle.js",
     "clear": "rm -rf ./dist && rm -rf ./tmp",
     "ngc": "ngc -p tsconfig.ngc.json",
