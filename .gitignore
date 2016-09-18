@@ -1,10 +1,8 @@
 .idea
 /node_modules/
 /dist/
+!/dist/index.html
 /aot/
 /npm-debug.log
 specs.js
 update_all_branches
-
-*.ngfactory.ts
-*.css.shim.ts
