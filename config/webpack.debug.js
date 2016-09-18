@@ -51,7 +51,8 @@ module.exports = merge(common, {
             minChunks: Infinity
         }),
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: 'src/index.html',
+            chunks: ['main/mai']
         }),
         new ExtractTextPlugin('styles.css'),
     ],

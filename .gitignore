@@ -1,6 +1,7 @@
 .idea
 /node_modules/
 /dist/
+/aot/
 /npm-debug.log
 specs.js
 update_all_branches

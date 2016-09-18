@@ -1,22 +1,24 @@
 {
   "compilerOptions": {
     "module": "es2015",
-    "target": "es5",
+    "target": "es2015",
     "outDir": "dist",
     "lib": ["es2015", "dom"],
     "rootDir": ".",
-    "sourceMap": true,
+    "sourceMap": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node"
   },
   "exclude": [
     "typings/index.d.ts",
+    "src/entry.ts",
     "node_modules"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
-  "awesomeTypescriptLoaderOptions": {
-    "useWebpackText": true
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit" : true
   }
 }
