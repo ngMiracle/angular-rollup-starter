@@ -8,9 +8,9 @@ const common = require('./webpack.common')
 
 module.exports = merge(common, {
     entry: {
-        polyfills: './src/polyfills-prod',
-        vendors: './src/vendors-prod',
-        main: './src/main-prod',
+        polyfills: './src/polyfills',
+        vendors: './src/vendors',
+        main: './src/main',
     },
     module: {
         loaders: [
@@ -46,6 +46,9 @@ module.exports = merge(common, {
         extensions: ['', '.ts', '.ts', '.js', '.json']
     },
     plugins: [
+        new webpack.DefinePlugin({
+            IS_PRODUCTION: JSON.stringify(true),
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['polyfills', 'vendors', 'main'].reverse(),
             minChunks: Infinity
