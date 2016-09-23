@@ -4,7 +4,7 @@ import uglify      from 'rollup-plugin-uglify'
 import * as closure from 'google-closure-compiler-js'
 
 function closureCompilerPlugin(options){
-    opitons = options || {}
+    options = options || {}
     return {
         transformBundle(bundle){
             const compilation = Object.assign({}, options, {
