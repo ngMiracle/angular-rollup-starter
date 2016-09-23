@@ -6,4 +6,3 @@ before_script:
   - npm run clear
   - npm run build
 script: npm test
-
