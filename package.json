@@ -4,7 +4,7 @@
   "description": "todo",
   "main": "index.js",
   "scripts": {
-    "build": "npm run ngc && npm run tsc && npm run rollup && gzip -kf dist/bundle.js",
+    "build": "npm run ngc && npm run tsc && npm run rollup",
     "clear": "rm -rf ./dist && rm -rf ./aot",
     "ngc": "ngc -p tsconfig.ngc.json",
     "test": "echo No test yet.",
