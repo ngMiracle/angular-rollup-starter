@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run ngc && npm run tsc && npm run rollup && gzip -kf dist/bundle.js",
-    "clear": "rm -rf ./dist && rm -rf ./tmp",
+    "clear": "rm -rf ./dist && rm -rf ./aot",
     "ngc": "ngc -p tsconfig.ngc.json",
-    "test": "webpack --config webpack.spec.ts --progress --color && karma start",
+    "test": "echo No test yet.",
     "tsc": "tsc -p tsconfig.tsc.json",
     "serve": "webpack-dev-server --config config/webpack.debug.js --hot --inline --compress --progress --port 3000  --content-base src",
     "start": "npm run serve",
