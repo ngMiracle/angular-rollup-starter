@@ -1,5 +1,5 @@
-# Angular 2 Webpack Starter
+# Angular 2 Rollup Starter
 
-AOT + Tree-shaking + Minify + Gzip => 60.3KB
+[![Build Status](https://travis-ci.org/ngMiracle/angular-rollup-starter.svg?branch=master)](https://travis-ci.org/ngMiracle/angular-rollup-starter)
 
-![Network Screenshot](./network.png)
+    // TODO
